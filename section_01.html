@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+       
+        @font-face {
+        font-family: 'ACCchildrenfall';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenfall.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+        font-family: 'SBAggroB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+        font-family: 'Cafe24Oneprettynight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        #title {
+            width: 100%;
+            height: 800px;
+            background-color: #edf6f9;
+            overflow: hidden;
+        }
+        #headline {
+            width: 1000px;
+            height: 100px;
+            margin: 0px auto;
+            background-color: #ffddd2;
+        }
+        #logo {
+            margin-left: 30px;
+            padding: 5px;
+            width: 200px;
+            height: 70px;
+            font-size: 2em;
+            font-variant: small-caps;
+            font-weight: bold;
+            font-family: ACCchildrenfall;
+            cursor: pointer;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px gray;
+            line-height: 35px;
+            float: left;
+            position: relative;
+            top: 10px;
+        }
+        #aboutme, #projects, #timeline  {
+            margin: 0px 5px;
+            padding: 5px;
+            width: 130px;
+            height: 30px;
+            font-size: 2em;
+            font-variant: small-caps;
+            font-weight: bold;
+            font-family: ACCchildrenfall;
+            cursor: pointer;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px gray;
+            float: left;
+            line-height: 30px;
+            position: relative;
+            top: 50px;
+            text-align: center;
+            left: 300px;
+        }
+        #title a {
+            color: white;
+            text-decoration: none;
+        }
+        #linkbox::after {
+            content: '';
+            display: block;
+            clear:both;
+        }
+        #headtxt {
+            width: 1000px;
+            margin: 0px auto;
+        }
+        #headleft {
+            width: 300px;
+            height: 700px;
+            float: left;
+            background-color: #FFF;
+        }
+        #headright {
+            width: 700px;
+            height: 700px;
+            float: left;
+            background-color: #AAC3C3;
+        }
+        #hl1 {
+            font-family: ACCchildrenfall;
+            position: relative;
+            top: 300px;
+            left: 20px;
+            font-size: 17px;
+            letter-spacing: 0.1em;
+        }
+        #hl2 {
+            font-family: ACCchildrenfall;
+            position: relative;
+            top: 600px;
+            left: 20px;
+            font-size: 17px;
+            letter-spacing: 0.1em;
+        }
+        #hr1 {
+            font-family: ACCchildrenfall;
+            position: relative;
+            top: 550px;
+            left: 50px;
+            font-size: 100px;
+            font-weight: bold;
+            color: white;
+        }
+        #hr2 {
+            font-family: ACCchildrenfall;
+            position: relative;
+            top: 280px;
+            left: 300px;
+            font-size: 17px;
+            color: white;
+            transform: rotate(90deg);
+            letter-spacing: 0.1em;
+        }
+        #hr3 {
+            font-family: ACCchildrenfall;
+            position: relative;
+            top: 760px;
+            left: 300px;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            transform: rotate(90deg);
+        }
+        header::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+
+
+
+
+
+        main {
+            width: 100%;
+            height: 1050px;
+            background-color: #ae2012;
+            overflow: hidden;
+        }
+        #mainbox {
+            width: 1000px;
+            margin: 0px auto;
+            height: 1050px;
+        }
+
+
+        #mainleft {
+            width: 300px;
+            height: 1050px;
+            float: left;
+            background-color: #bb3e03;
+        }
+        #mainright {
+            width: 700px;
+            height: 1050px;
+            float: left;
+        }
+
+        #mainleft > #aboutmelink {
+            border: 3px solid #ee9b00;
+            width: 150px;
+            height: 50px;
+            position: relative;
+            top: 30px;
+            left: 75px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            font-size: 30px;
+            font-variant: small-caps;
+            color: white;
+            font-family: ACCchildrenfall;
+            letter-spacing: 0.1em;
+        }
+        #mainleft > #mainimage {
+            background-color: white;
+            border: 3px solid #ee9b00;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 100px;
+            left: 50px;
+            overflow: hidden;
+        }
+        #mainimage img {
+            width: 250px;
+            transform: translate(-35px, 25px)
+        }
+
+        #mainleft:hover #mainimage > img {
+            animation-name: mli;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mli {
+            from { opacity: 0; transform: translate(-35px, 200px);}
+            to { opacity: 1; transform: translate(-35px, 25px); }
+        }
+
+        #mainleft > #maintext {
+            width: 240px;
+            height: 300px;
+            position: relative;
+            top: 130px;
+            padding: 30px;
+        }
+        #maintext > #txt {
+            font-variant: small-caps;
+            font-weight: bold;
+            font-size: 23px;
+            line-height: 50px;
+            color: white;
+        }
+        #txt > small {
+            font-variant: normal;
+            font-size: 15px;
+            font-family: ACCchildrenfall;
+            letter-spacing: 0.1em;
+        }
+        #mainleft:hover #txt {
+            animation-name: mlt;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mlt {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+
+
+
+
+        #mainright > #introduce {
+            width: 700px;
+            height: 390px;
+            background-image: url('./image/3 (1).jpg');
+            background-repeat: no-repeat;
+            background-size: 700px;
+
+        }
+        #introducetext {
+            border: 5px solid #edf2f4;
+            border-radius: 30px;
+            width: 600px;
+            height: 50px;
+            position: relative;
+            top: 30px;
+            left: 50px;
+            font-weight: bold;
+            font-family: ACCchildrenfall;
+            line-height: 0px;
+            color: white;
+            text-shadow: 1px 1px 1px #000814;
+            font-size: 25px;
+            font-variant: small-caps;
+            letter-spacing: 0.1em;
+        }
+        @keyframes mri {
+            from {height: 50px;}
+            to {height: 330px;}
+        }
+        @keyframes mris {
+            0% {opacity: 0;}
+            50% {opacity: 0.5;}
+            100% {opacity: 1;}
+        }
+        #introducetext > span {
+            opacity: 1;
+            display: block;
+            font-size: 15px;
+            line-height: 40px;
+            position: relative;
+            top: 30px;
+            left: 100px;
+            width: 400px;
+            opacity: 0;
+            font-family: Cafe24Oneprettynight;
+            letter-spacing: 0.1em;
+        }
+        #introduce:hover #introducetext {
+            animation-name: mri;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        #introduce:hover #introducetext > span {
+            animation-name: mris;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+        }
+
+
+
+
+
+        #abilities {
+            margin-top: 0px;
+            width: 700px;
+            height: 660px;
+            float: left;
+            background-color: #f9844a;
+        }
+        #a1 {
+            border: 3px solid #ef233c;
+            width: 150px;
+            height: 50px;
+            position: relative;
+            top: 30px;
+            left: 50px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            font-size: 30px;
+            font-variant: small-caps;
+            color: white;
+            font-family: ACCchildrenfall;
+            letter-spacing: 0.1em;
+        }
+        #line1 {
+            padding-bottom: 6px;
+            border-bottom: 5px solid #ffc300;
+            width: 460px;
+            height: 70px;
+            position: relative;
+            top: 50px;
+            left: 50px;
+            border-radius: 5px;
+        }
+        #line2 {
+            padding-bottom: 6px;
+            border-bottom: 5px solid #ffc300;
+            width: 600px;
+            height: 70px;
+            position: relative;
+            top: 70px;
+            left: 50px;
+            border-radius: 5px;
+        }
+        #line3 {
+            padding-bottom: 6px;
+            border-bottom: 5px solid #ffc300;
+            width: 550px;
+            height: 70px;
+            position: relative;
+            top: 90px;
+            left: 50px;
+            border-radius: 5px;
+        }
+        #line4 {
+            padding-bottom: 6px;
+            border-bottom: 5px solid #ffc300;
+            width: 530px;
+            height: 70px;
+            position: relative;
+            top: 110px;
+            left: 50px;
+            border-radius: 5px;
+        }
+        #line5 {
+            padding-bottom: 6px;
+            border-bottom: 5px solid #ffc300;
+            width: 530px;
+            height: 70px;
+            position: relative;
+            top: 130px;
+            left: 50px;
+            border-radius: 5px;
+        }
+        .per {
+            text-align: center;
+            line-height: 70px;
+            font-size: 15px;
+            font-variant: small-caps;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px red;
+            opacity: 0;
+        }
+        #ball1 {
+            border: 3px solid #AE2012;
+            width: 70px;
+            height: 70px;
+            background-image: url('./image/4 (1).png');
+            background-repeat: no-repeat;
+            background-size: 70px;
+            border-radius: 50%;
+        }
+        #ball2 {
+            border: 3px solid #AE2012;
+            width: 70px;
+            height: 70px;
+            background-image: url('./image/5 (3).png');
+            background-repeat: no-repeat;
+            background-size: 70px;
+            border-radius: 50%;
+        }
+        #ball3 {
+            border: 3px solid #AE2012;
+            width: 70px;
+            height: 70px;
+            background-image: url('./image/4 (4).png');
+            background-repeat: no-repeat;
+            background-size: 70px;
+            border-radius: 50%;
+        }
+        #ball4 {
+            border: 3px solid #AE2012;
+            width: 70px;
+            height: 70px;
+            background-image: url('./image/4 (2).png');
+            background-repeat: no-repeat;
+            background-size: 70px;
+            border-radius: 50%;
+        }
+        #ball5 {
+            border: 3px solid #AE2012;
+            width: 70px;
+            height: 70px;
+            background-image: url('./image/6.png');
+            background-repeat: no-repeat;
+            background-size: 70px;
+            border-radius: 50%;
+        }
+        #abilities:hover #ball1 {
+            animation-name: ball1;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        #abilities:hover #ball2 {
+            animation-name: ball2;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease;
+        }
+        #abilities:hover #ball3 {
+            animation-name: ball3;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in;
+        }
+        #abilities:hover #ball4 {
+            animation-name: ball4;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+        #abilities:hover #ball5 {
+            animation-name: ball5;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+        #abilities:hover .per {
+            animation-name: per;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 3s;
+        }
+        @keyframes per {
+            10% {opacity: .5;}
+            20% {opacity: 1;}
+            30% {opacity: 0;}
+            40% {opacity: .5;}
+            50% {opacity: 1;}
+            60% {opacity: 0;}
+            70% {opacity: .5;}
+            80% {opacity: 1;}
+            90% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @keyframes ball1 {
+            from {transform: translate(0px, 0px);}
+            to{transform: translate(400px, 0px) rotate(1800deg);}
+        }
+        @keyframes ball2 {
+            from {transform: translate(0px, 0px);}
+            to{transform: translate(540px, 0px) rotate(1800deg);}
+        }
+        @keyframes ball3 {
+            from {transform: translate(0px, 0px);}
+            to{transform: translate(490px, 0px) rotate(1800deg);}
+        }
+        @keyframes ball4 {
+            from {transform: translate(0px, 0px);}
+            to{transform: translate(470px, 0px) rotate(1800deg);}
+        }
+        @keyframes ball5 {
+            from {transform: translate(0px, 0px);}
+            to{transform: translate(470px, 0px) rotate(1800deg);}
+        }
+        main::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+
+
+
+        #projectsmenu{
+            width: 100%;
+            height: 2000px;
+            background-color: #dda15e;
+            overflow: hidden;
+        }
+        
+        
+        #projectsbox {
+            width: 1000px;
+            margin: 0px auto;
+            height: 2000px;
+            background-color: #fefae0;
+        }
+
+        #projectsbox > #projectslink {
+            border: 3px solid #577590;
+            width: 150px;
+            height: 50px;
+            position: relative;
+            top: 60px;
+            left: 45px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            font-size: 30px;
+            font-variant: small-caps;
+            letter-spacing: 0.1em;
+            font-family: ACCchildrenfall;
+            color: #283618;
+        }
+
+        #p1 {
+            border-bottom: 1px dashed black;
+            height: 1000px;
+        }
+        #name {
+            position: relative;
+            top: 150px;
+            left: 46px;
+            width: 300px;
+            height: 200px;
+            letter-spacing: 0.1em;
+            font-family: SBAggroB;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        #name > small {
+            font-size: 18px;
+        }
+
+        #team {
+            border-top: 1px solid black;
+            position: relative;
+            top: 30px;
+            left: 46px;
+            line-height: 30px;
+            font-family: SBAggroB;
+            font-weight: bold;
+            width: 300px;
+
+
+        }
+        #explain {
+            position: relative;
+            top: -30px;
+            left: 360px;
+            width: 300px;
+            font-family: Cafe24Oneprettynight;
+            line-height: 20px;
+            text-align: justify;
+        }
+        #imagebox1 {
+            border-radius: 10px;
+            width: 500px;
+            height: 400px;
+            position: relative;
+            left: 430px;
+            top:-50px;
+            background-image: url("./image/11.png");
+            background-size: 500px;
+            background-repeat: no-repeat;
+            transition-duration: 1s;
+            transition-property: all;
+        }
+        #imagebox1:hover {
+            transform: scale(1.1, 1.1);
+        }
+        #p1 > label{
+            position: relative;
+            top: -80px;
+            left: 610px;
+            font-size: 13px;
+            font-family: Cafe24Oneprettynight;
+        }
+
+
+
+
+
+
+
+
+
+        #name2 {
+            position: relative;
+            top: 150px;
+            left: 46px;
+            width: 300px;
+            height: 200px;
+            letter-spacing: 0.1em;
+            font-family: SBAggroB;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        #name2 > small {
+            position: relative;
+            top: -55px;
+            left: 230px;
+            font-size: 18px;
+        }
+        #p2 > label {
+            position: relative;
+            top: -80px;
+            left: 610px;
+            font-size: 13px;
+            font-family: Cafe24Oneprettynight;
+        }
+        #imagebox2 {
+            border-radius: 10px;
+            width: 500px;
+            height: 400px;
+            position: relative;
+            left: 430px;
+            top:-50px;
+            background-image: url("./image/12.png");
+            background-size: 500px;
+            background-repeat: no-repeat;
+            transition-duration: 1s;
+            transition-property: all;
+        }
+        #imagebox2:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #timelinemenu{
+            width: 100%;
+            height: 1400px;
+            background-color: #264653;
+            overflow: hidden;
+        }
+        
+        
+        #timelinebox {
+            width: 1000px;
+            margin: 0px auto;
+            height: 1400px;
+            background: linear-gradient(-45deg, #2a9d8f 50%, #e9c46a 50%);
+        }
+
+        #timelinebox > #timelinelink {
+            border: 3px solid #540b0e;
+            width: 150px;
+            height: 50px;
+            position: relative;
+            top: 40px;
+            left: 45px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            font-size: 30px;
+            font-variant: small-caps;
+            color: #9e2a2b;
+            letter-spacing: 0.1em;
+            font-family: ACCchildrenfall;
+        }
+
+
+        #card {
+            width: 1000px;
+            column-count: 2;
+            column-rule: 3px dashed #264653;
+            position: relative;
+            top: 100px;
+        }
+
+        #card .item {
+            border: 1px solid #03045e;
+            border-radius: 5px;
+            margin: 100px auto 0px auto;
+            width: 400px;
+            box-shadow: 1px 1px 1px gray;
+            font-size: 15px;
+            font-family: Cafe24Oneprettynight;
+            color: black;
+            font-weight: bold;
+
+        }
+
+        .item .imgbox {
+            border-bottom: 1px solid gray;
+            width: 389px;
+            padding: 5px;
+            line-height: 0px;
+            text-align: center;
+        }
+        
+        .item img {
+            border-radius: 10px;
+            width: 300px;
+        }
+        .item .txt {
+            text-align: center;
+        }
+
+        #timelinebox:hover .item {
+            animation-name: tl1;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes tl1 {
+            0% {transform: translate(0px, 100px);}
+            50% {transform: translate(0px, 0px);}
+            100% {transform: translate(0px, -100px);}
+        }
+
+
+
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <header id="title">
+        <div id="headline">
+            <div id="linkbox">
+                <div id="logo"><a href="#title">SMJ's Portfolio</a></div>
+                <div id="aboutme"><a href="#aboutmelink">AboutMe</a></div>
+                <div id="projects"><a href="#projectslink">Projects</a></div>
+                <div id="timeline"><a href="#timelinelink">TimeLine</a></div>
+            </div>
+        </div>
+        <div id="headtxt">
+            <div id="headleft">
+                <div id="hl1">Thank you for visiting</div>
+                <div id="hl2">Minjon Seo</div>
+            </div>
+            <div id="headright">
+                <div id="hr1">Portfolio</div>
+                <div id="hr2">가치를 실현하는 개발자</div>
+                <div id="hr3">● ●</div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <main>
+        <div id="mainbox">
+            <div id="mainleft">
+                <div id=aboutmelink>AboutMe</div>
+                <div id="mainimage"><img src="./image/1 (1).png" alt="manimage"></div>
+                <div id="maintext">
+                    <div id="txt">
+                        Name: <small>서민종</small><br>
+                        Date of birth: <small>2000/02/02</small><br>
+                        Address: <small>경기도 평택시</small><br>
+                        Email: <small>happy@gmail.com</small><br>
+                        Tel: <small>010-0000-0000</small>
+                    </div>
+                </div>
+            </div>
+            <div id="mainright">
+                <div id="introduce">
+                    <div id="introducetext">IntroduceMySelf<span>안녕하세요. 가치를 실현하는 개발자 서민종입니다. 컴퓨터가 이해할 수 있는 코드보다는 사람이 이해할 수 있는 코드를 작성하는 프로그래머로 거듭나기 위해 노력하고 있습니다. 가족보다 시간을 많이 보내는 평생의 동반자인 직장동료의 1인으로서의 역할과 책임을 성실하게 수행하기 위한 끊임없는 자기개발을 목표로 합니다. 항상 새로운 기술에 적극적으로 도전하며 함께하고 싶은 사람으로 성장하겠습니다.</span>
+                    </div>
+                </div>
+                <div id="abilities">
+                    <div id="a1">Abilities</div>
+                    <div id="line1">
+                        <div id="ball1"><div class="per">Java70%</div></div>
+                    </div>
+                    <div id="line2">
+                        <div id="ball2"><div class="per">oracle90%</div></div>
+                    </div>
+                    <div id="line3">
+                        <div id="ball3"><div class="per">Html80%</div></div>
+                    </div>
+                    <div id="line4">
+                        <div id="ball4"><div class="per">CSS75%</div></div>
+                    </div>
+                    <div id="line5">
+                        <div id="ball5"><div class="per">JavaScript75%</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+
+    <section id="projectsmenu">
+        <div id="projectsbox">
+            <div id="projectslink">Projects</div>
+            <div id="p1">
+                <div id="name">안경집<br>프로젝트<small>Java</small></div>
+                <div id="imagebox1" name="imagebox1"></div>
+                <label>이미지 클릭시 상세화면 이동</label>
+                <div id="team">2021.10.29 ~ 2021.11.04<br>서민종 외 5명</div>
+                <div id="explain">현재 운영중인 안경쇼핑몰은 안경 선정에 고려 할만한 사항들이 다소 누락되어 소비자가 오프라인매장을 방문을 불가피하게 한다는 문제점을 인식하여 이를 해결하고자 안경 쉐입, 렌즈 직경, 브릿지 사이 거리 등의 세부사항을 설정하여 검색할 수 있는 기능을 제공함으로써 온라인쇼핑몰을 보다 더 적극적으로 이용할 수 있게 하여 소비자의 만족도를 높이고 오프라인매장별로 상이한 가격책정등의 평준화를 도모하여 합리적 소비를 이끌어내기 위하여 팀 프로젝트의 주제로 선정되었습니다.</div>
+            </div>
+            <div id="p2">
+                <div id="name2">DB<br>프로젝트<small>Oracle</small></div>
+                <div id="imagebox2" name="imagebox1"></div>
+                <label>이미지 클릭시 상세화면 이동</label>
+                <div id="team">2021.11.22 ~ 2021.12.03<br>서민종 외 4명</div>
+                <div id="explain">학원 운영에 필요한 교육과정을 생성하고 해당 교육과정에 필요한 교육 재원, 교육인력을 구축하며 교육생 모집과 선발과정을 통해 교육 과정을 운영하며 교육센터의 과정을 이수한 교육생들에게 사후관리 서비스를 지원하기 위하여 팀프로젝트의 주제로 선정되었습니다.</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="timelinemenu">
+        <div id="timelinebox">
+            <div id=timelinelink>TimeLine</div>
+            <div id="card">
+                <div class="item">
+                    <div class="imgbox"><img src="./image/7.png" alt=""></div>
+                    <div class="txt">1989.02.02 2남중 차남으로 출생</div>
+                </div>
+                <div class="item">
+                    <div class="imgbox"><img src="./image/7(1).png" alt=""></div>
+                    <div class="txt">2008.10 ~ 2010.08 2포병여단 92포병대대 육군병장 만기전역</div>
+                </div>
+                <div class="item">
+                    <div class="imgbox"><img src="./image/7(2).png" alt=""></div>
+                    <div class="txt">2014.02 ~ 2018.02 서원대학교 역사교육과 입학 & 졸업<br>2016.02 ~ 2017.02 늘해랑 학생회 기획차장으로 활동하며 춘계 & 추계답사 기획 및 운영, 답사자료집 기획 및 제작<br>2017.04 ~ 2017.06 충북운동중학교 교생실습<br>2017.08 충북제천간디학교 교육봉사<br>2017.09 청주맹학교 교육봉사</div>
+                </div>
+                <div class="item">
+                    <div class="imgbox"><img src="./image/7(3).png" alt=""></div>
+                    <div class="txt">2016.01 ~ 2016.02 동기방학 중 서원대학교 국제교류프로그램참여 중국 항주사범대학 현장학습</div>
+                </div>
+                <div class="item">
+                    <div class="imgbox"><img src="./image/7(4).png" alt=""></div>
+                    <div class="txt">2017.12 ~ 2018.01 서원대학교에서 주관한 캄보디아해외봉사활동에 참여하여 전체팀장을 맡아 쫑쁘렉초등학교 교육봉사, 문화공연, 사랑의 집짓기, 나눔행사 등의 활동</div>
+                </div>
+                <div class="item">
+                    <div class="imgbox"><img src="./image/7(5).png" alt=""></div>
+                    <div class="txt">2021.09 ~ 2022.02 쌍용교육센터 (디지털컨버전스) 자바 기반 AWS 클라우드 활용 Full-Stack 개발자 양성 과정 입학 및 수료</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const ibox1 = document.getElementById('imagebox1');
+        const ibox2 = document.getElementById('imagebox2');
+
+        ibox1.onclick = function () {
+            window.open('section_02.html', '_blank', '');
+        };
+        ibox2.onclick = function() {
+            window.open('section_03.html', '_blank', '');
+        };
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
